@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business Website</title>
+<link rel="stylesheet" href="style.css">
+</head>
+</script>
+
+<body>
+
+<header class="hero">
+  <h1>King Cut Barbershop</h1>
+  <p>Professional haircuts in Tbilisi</p>
+  <a href="tel:+995511466371" class="btn">Call Now</a>
+</header>
+
+<section class="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Men's Haircut</li>
+    <li>Beard Trim</li>
+    <li>Kids Haircut</li>
+    <li>Hair Styling</li>
+  </ul>
+</section>
+
+<section class="gallery">
+  <h2>Gallery, Send Photos to use it as showcase!(customer only)</h2>
+  <div class="grid">
+    <img src="images/1.jpg">
+    <img src="images/2.jpg">
+    <img src="images/3.jpg">
+  </div>
+</section>
+<section class="booking">
+  <h2>Book Your Haircut</h2>
+  <form onsubmit="sendWhatsApp(); return false;">
+
+    <input id="name" type="text" placeholder="Your Name" required>
+    <input id="phone" type="tel" placeholder="Phone Number" required>
+
+    <select id="service">
+      <option>Men’s Haircut</option>
+      <option>Beard Trim</option>
+      <option>Kids Haircut</option>
+      <option>Hair Styling</option>
+    </select>
+
+    <input id="date" type="date" required>
+    <input id="time" type="time" required>
+
+    <button type="submit">Send Booking</button>
+  </form>
+</section>
+<section class="contact">
+  <h2>Visit Us</h2>
+  <iframe src="https://maps.google.com/maps?q=tbilisi&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<footer>
+  <p>© 2026 Professional Haircuts</p>
+</footer>
+<script>
+function sendWhatsApp() {
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var service = document.getElementById("service").value;
+  var date = document.getElementById("date").value;
+  var time = document.getElementById("time").value;
+
+  var text = "New Booking:%0AName: " + name + "%0APhone: " + phone + "%0AService: " + service + "%0ADate: " + date + "%0ATime: " + time;
+
+  // Replace with barber's WhatsApp number
+  var barberNumber = "995599000000"; 
+
+  // Open WhatsApp in a new tab
+  window.open("https://wa.me/" + barberNumber + "?text=" + text, "_blank");
+}
+</script>
+</body>
+</html>
